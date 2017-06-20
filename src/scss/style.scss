@@ -1,0 +1,26 @@
+@import 'variables';
+@import 'normalize';
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	position: relative;
+	height: 100vh;
+	font-family: 'Roboto', sans-serif;
+	color: $cFont;
+	margin: 0;
+	padding: 0;
+}
+
+#bdy{
+	position: relative;
+	height: 100%;;
+}
+
+.clearfix::after{
+	content: " ";
+	display: table;
+	clear: both;
+}

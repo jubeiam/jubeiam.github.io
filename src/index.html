@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+		<head>
+			<title>Leszek Stęczniewski</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta http-equiv="Content-Language" content="pl" />
+			<meta http-equiv="Creation-Date" content="Wed, 29 Sep 2010" />
+
+			<meta name="Author" content="Leszek Stęczniewski" />
+
+			<meta name="viewport" content="width=720, initial-scale=0.4, user-scalable=yes">
+			<meta name="viewport" content="minimum-scale=0.4, maximum-scale=1.0">
+
+			<link rel="icon" href="img/favicon.jpg" />
+			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+			<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+			<link rel="stylesheet" type="text/css" href="index.css">
+
+		</head>
+	<body>
+		<div id="bdy">
+
+
+			<router-view></router-view>
+
+			<drawer :open="open" @close="open = false">
+
+				<router-link to="/vivecard">
+					<div>
+						<i class="fa fa-address-card"></i>
+					</div>
+				</router-link>
+
+				<router-link to="/2048">
+					<div>
+						<i class="fa fa-trophy"></i>
+					</div>
+				</router-link>
+
+				<router-link to="/twitch">
+					<div>
+						<i class="fa fa-twitch"></i>
+					</div>
+				</router-link>
+
+			</drawer>
+
+
+		</div>
+
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="//cdn.tmijs.org/js/latest/1.x/tmi.min.js"></script>
+		<script src="index.js" type="text/javascript"></script>
+
+	</body>
+</html>
