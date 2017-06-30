@@ -11,6 +11,7 @@
 import InputAcComponent from './../input-ac.vue'
 
 // import 'axios'
+import axios from 'axios-es6'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/debounceTime'
 import 'rxjs/add/operator/filter'

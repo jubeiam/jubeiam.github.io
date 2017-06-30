@@ -16,7 +16,7 @@ const router = new VueRouter({
 		{path: '/vivecard', component: Vivecard}
 		,{path: '/2048', component: Board}
 		// ,{path: '/twitch', component: Twitch}
-		,{path: '/quiz', component: Quiz}
+		// ,{path: '/quiz', component: Quiz}
 		,{path: '*', redirect: '/vivecard'}
 	]
 })

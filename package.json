@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "leszek steczniewski",
-  "license": "NONE",
+  "description": "test project showcasing vue2",
+  "license": "UNLICENSED",
   "dependencies": {
     "axios": "^0.16.2",
     "eslint": "^3.19.0",
@@ -32,6 +33,7 @@
     "tough-cookie": "^2.3.2",
     "vue": "^2.3.3",
     "vue-router": "^2.5.3",
+    "axios-es6": "^0.11.1",
     "vuex": "^2.3.1"
   }
 }
