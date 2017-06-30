@@ -23,14 +23,16 @@ export default {
 	)
 	,watch:{
 		v: function(n){
+			if(n == 0) this.prev = 0 // when resets to 0 update prev also
 			this.delta = n - this.prev
 
-			if(this.delta < 0) return
+			if(this.delta <= 0) return // disable showing popup when lower or eq 0
 			this.show = true
 
 			setTimeout(() => {
-				this.show = false
-				this.prev = n
+				// this is where animation ends by fade out
+				this.show = false // hide popup
+				this.prev = n // and set prev value
 			}, 0)
 		}
 	}

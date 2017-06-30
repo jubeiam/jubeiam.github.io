@@ -45,17 +45,17 @@ gulp.task('set-dev-node-env', function() {
 })
 
 gulp.task('set-prod-node-env', function() {
+	require('longjohn')
 	return process.env.NODE_ENV = 'production'
 })
 
 
 gulp.task('webserver', function() {
-	gulp.src('./dist')
+	gulp.src('./')
 		.pipe(webserver({
-			livereload: false,
+			livereload: true,
 			directoryListing: {
-				enable: true,
-				path: 'dist'
+				enable: false,
 			},
 			fallback: 'index.html',
 			open: 'index.html'

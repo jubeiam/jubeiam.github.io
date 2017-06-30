@@ -408,3 +408,6 @@ body {
   content: " ";
   display: table;
   clear: both; }
+
+.fa-sm {
+  font-size: 0.65em; }

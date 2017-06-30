@@ -89,7 +89,7 @@ export default {
 		background-color: #3e3f3a;
 		border-radius: 1%;
 		width: 500px;
-		height: 200px;
+		height: 260px;
 		padding: 30px;
 	}
 
