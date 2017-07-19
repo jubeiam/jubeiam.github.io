@@ -290,6 +290,7 @@ toolbox.router.get(/\.md$/, toolbox.fastest, {});
 toolbox.router.get(/font-awesome/, toolbox.fastest, {"debug":true});
 toolbox.router.get(/fonts\.googleapis\.com/i, toolbox.cacheFirst, {"debug":true});
 toolbox.router.get(/fonts\.gstatic\.com/i, toolbox.cacheFirst, {"debug":true});
+toolbox.router.get(/jubeiam\.github\.io$/i, toolbox.networkFirst, {});
 
 
 
