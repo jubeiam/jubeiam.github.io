@@ -291,6 +291,7 @@ toolbox.router.get(/font-awesome/i, toolbox.fastest, {});
 toolbox.router.get(/fonts\.googleapis\.com/i, toolbox.cacheFirst, {});
 toolbox.router.get(/fonts\.gstatic\.com/i, toolbox.cacheFirst, {});
 toolbox.router.get(/jubeiam\.github\.io(\/)?$/i, toolbox.networkFirst, {"debug":true});
+toolbox.router.get("/", toolbox.networkFirst, {"debug":true});
 
 
 

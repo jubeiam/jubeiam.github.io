@@ -99,6 +99,12 @@ gulp.task('generate-service-worker', function(callback) {
 				,options: {
 					debug: true
 				}
+			}, {
+				urlPattern: '/'
+				,handler: 'networkFirst'
+				,options: {
+					debug: true
+				}
 			}
 		]
 	}, callback)
