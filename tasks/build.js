@@ -1,3 +1,5 @@
+/* global require:true */
+
 const jetpack = require('fs-jetpack')
 const gulp = require('gulp')
 const sass = require('gulp-sass')
@@ -107,7 +109,7 @@ gulp.task('build', ['set-prod-node-env' ,'html', 'sass', 'bundle', 'generate-ser
 
 gulp.task('watch', ['set-dev-node-env', 'webserver'], () => {
 	const beepOnError = (done) => {
-		return (err, a) => {
+		return (err) => {
 			if (err) {
 				beepSound()
 			}
