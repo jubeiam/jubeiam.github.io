@@ -1,31 +1,34 @@
-const path = require('path');
-const jetpack = require('fs-jetpack');
-const rollup = require('rollup').rollup;
-const resolve = require('rollup-plugin-node-resolve');
-const commonjs = require('rollup-plugin-commonjs');
-const replace = require('rollup-plugin-replace');
-const alias = require('rollup-plugin-alias');
-const vue = require('rollup-plugin-vue');
-const process = require('process');
+const path = require('path')
+const jetpack = require('fs-jetpack')
+const rollup = require('rollup').rollup
+const resolve = require('rollup-plugin-node-resolve')
+const commonjs = require('rollup-plugin-commonjs')
+const replace = require('rollup-plugin-replace')
+const alias = require('rollup-plugin-alias')
+const vue = require('rollup-plugin-vue')
+const process = require('process')
+const sass = require('rollup-plugin-sass')
 
-const cached = {};
+const cached = {}
 
 module.exports = (src, dest, opts) => {
-	const options = opts || {};
+	const options = opts || {}
 
 	const plugins = [
 		// Add rollup plugins here
-		,alias({
+		alias({
 			'vue': 'node_modules/vue/dist/vue.esm.js'
 			,'vue-router': 'node_modules/vue-router/dist/vue-router.esm.js'
 		})
+		,sass()
 		,vue({
-			css: true
+
 		}),
 		,resolve({
 			module: true
 			,jsnext: true
 			,main: true
+			,browser: true
 		})
 		,commonjs({
 			include: 'node_modules/**'
@@ -33,7 +36,7 @@ module.exports = (src, dest, opts) => {
 		,replace({
 			'process.env.NODE_ENV': '"' + process.env.NODE_ENV + '"'
 		})
-	];
+	]
 
 	return rollup({
 		entry: src,
@@ -41,9 +44,9 @@ module.exports = (src, dest, opts) => {
 		plugins: plugins.concat(options.rollupPlugins || []),
 	})
 	.then((bundle) => {
-		cached[src] = bundle;
+		cached[src] = bundle
 
-		const jsFile = path.basename(dest);
+		const jsFile = path.basename(dest)
 		const result = bundle.generate({
 			format: 'cjs',
 			sourceMap: true,
@@ -51,10 +54,10 @@ module.exports = (src, dest, opts) => {
 		});
 		// Wrap code in self invoking function so the constiables don't
 		// pollute the global namespace.
-		const isolatedCode = `(function () {${result.code}\n}());`;
+		const isolatedCode = `(function () {${result.code}\n}());`
 		return Promise.all([
 			jetpack.writeAsync(dest, `${isolatedCode}\n//# sourceMappingURL=${jsFile}.map`),
 			jetpack.writeAsync(`${dest}.map`, result.map.toString()),
-		]);
-	});
-};
+		])
+	})
+}

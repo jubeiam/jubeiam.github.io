@@ -1,28 +1,26 @@
 <template lang="pug">
+div.content
+	div#front(:style="style" ref="front")
+		div.hr
+			div.txt
+			h1 Leszek Stęczniewski
+			h2 l.steczniewski (at) gmail.com
 
-	div(class='content')
-		div(id='front' :style="style")
-			div(class='hr')
-			div(class='txt')
-				h1 Leszek Stęczniewski
-				h2 l.steczniewski (at) gmail.com
-
-
-
+	explain-me(article="vivecard" @toggle="asdf")
 </template>
 
 <script>
-
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/observable/fromEvent'
-// import 'rxjs/add/observable/interval'
-// import 'rxjs/add/observable/zip'
-// import 'rxjs/add/operator/filter'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/throttleTime'
+import ExplainMe from './explain-me.vue'
 
 export default {
 	name: 'vivecard'
+	,components: {
+		ExplainMe
+	}
 	,data: () => ({
 		rotatex: 0
 		,rotatey: 0
@@ -36,18 +34,24 @@ export default {
 			f = Math.pow(f, 1.2)
 
 			return `box-shadow: ${this.rotatex}px ${this.rotatey}px ${f}px #93c54b;`
-			return `transform:rotateX(${this.rotatey}deg) rotateY(${this.rotatex}deg);`
+		}
+	}
+	,methods: {
+		asdf (d) {
+			console.log('asdf', d)
 		}
 	}
 	,mounted: function() {
 
 		let mp = Observable.fromEvent(window, 'mousemove')
-			// .map(event => {console.log(event); return event})
 			.throttleTime(100)
-			.map(event => ({
-				x: event.pageX / window.innerWidth * 2
-				,y: event.pageY / window.innerHeight * 2
-			}))
+			.map(event => {
+				let componentPosition = this.$refs.front.getBoundingClientRect()
+				return {
+					x: event.pageX / (componentPosition.left + componentPosition.width / 2)
+					,y: event.pageY / (componentPosition.top + componentPosition.height / 2)
+				}
+			})
 			.map(p => ({
 				x: p.x * this.maxx - this.maxx
 				,y: p.y * this.maxy - this.maxy
@@ -61,7 +65,6 @@ export default {
 			}
 		)
 
-
 	}
 	,destroyed: function(){
 		this.mp.unsubscribe()
@@ -73,7 +76,11 @@ export default {
 
 
 <style lang="scss" scoped>
+	.explained .content{
+		margin-right: 325px;
+	}
 	.content{
+		transition: all .3s ease;
 		height: 100%;
 		position: relative;
 		display: flex;
@@ -113,7 +120,5 @@ export default {
 	h2{
 		color: #f8f5f0;
 	}
-
-
 
 </style>

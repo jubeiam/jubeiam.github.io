@@ -62,8 +62,45 @@ gulp.task('webserver', function() {
 		}))
 })
 
+gulp.task('generate-service-worker', function(callback) {
+	const swPrecache = require('sw-precache')
+	const rootDir = destDir.path('')
 
-gulp.task('build', ['html', 'sass', 'bundle'])
+	swPrecache.write(`${rootDir}/service-worker.js`, {
+		staticFileGlobs: [rootDir + '/doc/*.md']
+		,stripPrefix: rootDir.replace(/\\/g, '/') + '/'
+		,runtimeCaching:[
+			{
+				urlPattern: /(index|bundle)\.(min\.)?(html|css|js)/
+				,handler: 'networkFirst'
+			}, {
+				urlPattern: /\.md$/
+				,handler: 'fastest'
+			}, {
+				urlPattern: /font-awesome/
+				,handler: 'fastest'
+				,options: {
+					debug: true
+				}
+			}, {
+				urlPattern: /fonts\.googleapis\.com/i
+				,handler: 'cacheFirst'
+				,options: {
+					debug: true
+				}
+			}, {
+				urlPattern: /fonts\.gstatic\.com/i
+				,handler: 'cacheFirst'
+				,options: {
+					debug: true
+				}
+			}
+		]
+	}, callback)
+})
+
+
+gulp.task('build', ['set-prod-node-env' ,'html', 'sass', 'bundle', 'generate-service-worker'])
 
 gulp.task('watch', ['set-dev-node-env', 'webserver'], () => {
 	const beepOnError = (done) => {
