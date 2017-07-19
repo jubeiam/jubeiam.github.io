@@ -97,7 +97,7 @@ gulp.task('generate-service-worker', function(callback) {
 					debug: true
 				}
 			}, {
-				urlPattern: /jubeiam\.github\.io$/i
+				urlPattern: /jubeiam\.github\.io(\/)?$/i
 				,handler: 'networkFirst'
 			}
 		]
