@@ -73,32 +73,32 @@ gulp.task('generate-service-worker', function(callback) {
 		,stripPrefix: rootDir.replace(/\\/g, '/') + '/'
 		,runtimeCaching:[
 			{
-				urlPattern: /(index|bundle)\.(min\.)?(html|css|js)/
+				urlPattern: /(index|bundle)\.(min\.)?(html|css|js)/i
 				,handler: 'networkFirst'
+				,options: {
+					debug: true
+				}
 			}, {
-				urlPattern: /\.md$/
-				,handler: 'fastest'
-			}, {
-				urlPattern: /font-awesome/
+				urlPattern: /\.md$/i
 				,handler: 'fastest'
 				,options: {
 					debug: true
 				}
+			}, {
+				urlPattern: /font-awesome/i
+				,handler: 'fastest'
 			}, {
 				urlPattern: /fonts\.googleapis\.com/i
 				,handler: 'cacheFirst'
-				,options: {
-					debug: true
-				}
 			}, {
 				urlPattern: /fonts\.gstatic\.com/i
 				,handler: 'cacheFirst'
-				,options: {
-					debug: true
-				}
 			}, {
 				urlPattern: /jubeiam\.github\.io(\/)?$/i
 				,handler: 'networkFirst'
+				,options: {
+					debug: true
+				}
 			}
 		]
 	}, callback)

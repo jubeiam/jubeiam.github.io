@@ -285,12 +285,12 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
-toolbox.router.get(/(index|bundle)\.(min\.)?(html|css|js)/, toolbox.networkFirst, {});
-toolbox.router.get(/\.md$/, toolbox.fastest, {});
-toolbox.router.get(/font-awesome/, toolbox.fastest, {"debug":true});
-toolbox.router.get(/fonts\.googleapis\.com/i, toolbox.cacheFirst, {"debug":true});
-toolbox.router.get(/fonts\.gstatic\.com/i, toolbox.cacheFirst, {"debug":true});
-toolbox.router.get(/jubeiam\.github\.io(\/)?$/i, toolbox.networkFirst, {});
+toolbox.router.get(/(index|bundle)\.(min\.)?(html|css|js)/i, toolbox.networkFirst, {"debug":true});
+toolbox.router.get(/\.md$/i, toolbox.fastest, {"debug":true});
+toolbox.router.get(/font-awesome/i, toolbox.fastest, {});
+toolbox.router.get(/fonts\.googleapis\.com/i, toolbox.cacheFirst, {});
+toolbox.router.get(/fonts\.gstatic\.com/i, toolbox.cacheFirst, {});
+toolbox.router.get(/jubeiam\.github\.io(\/)?$/i, toolbox.networkFirst, {"debug":true});
 
 
 
