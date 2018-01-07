@@ -14,9 +14,9 @@ body{
 	padding: 0;
 }
 
-#bdy{
+#app{
 	position: relative;
-	height: 100%;;
+	height: 100%;
 }
 
 .clearfix::after{
@@ -27,4 +27,41 @@ body{
 
 .fa-sm{
 	font-size: 0.65em;
+}
+
+.fade-enter-active, .fade-leave-active{
+	transition: opacity .5s, transform .5s
+}
+.fade-enter{
+	opacity: 0;
+	transform: translateY(-25px);
+}
+
+.fade-leave-to{
+	opacity: 0;
+	transform: translateY(25px);
+}
+
+.d-flex, .flex{
+	display: flex;
+}
+
+.flex--wrap{
+	flex-wrap: wrap;
+}
+
+.flex--between{
+	justify-content: space-between;
+}
+
+.space-around{
+	justify-content: space-around;
+}
+
+.relative{
+	position: relative;
+}
+
+.flex--column{
+	flex-direction: column;
 }

@@ -1,3 +1,4 @@
 node_modules/*
 .history/*
 debug.log
+src/components/twitch

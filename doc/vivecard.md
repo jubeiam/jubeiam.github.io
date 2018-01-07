@@ -8,7 +8,7 @@ I'm using pug a.k.a. jade template engine for my template part of component.
 `:style` is used because this element has a computed class
 
 
-```jade
+```pug
 div.content
   div#front(:style="style")
     div.hr

@@ -7,7 +7,7 @@ import marked from 'marked'
 // import SyntaxHighlighter, {registerBrush} from 'syntaxhighlighter';
 // import JavaScriptBrush from 'brush-javascript'
 import 'prismjs'
-import 'prismjs/components/prism-jade'
+import 'prismjs/components/prism-pug'
 import 'prismjs/components/prism-sass'
 
 

@@ -176,10 +176,10 @@ self.addEventListener('install', function(event) {
         );
       });
     }).then(function() {
-      
+
       // Force the SW to transition from installing -> active state
       return self.skipWaiting();
-      
+
     })
   );
 });
@@ -199,9 +199,9 @@ self.addEventListener('activate', function(event) {
         );
       });
     }).then(function() {
-      
+
       return self.clients.claim();
-      
+
     })
   );
 });
@@ -262,7 +262,7 @@ self.addEventListener('fetch', function(event) {
 
 
 // *** Start of auto-included sw-toolbox code. ***
-/* 
+/*
  Copyright 2016 Google Inc. All Rights Reserved.
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -292,6 +292,8 @@ toolbox.router.get(/fonts\.googleapis\.com/i, toolbox.cacheFirst, {});
 toolbox.router.get(/fonts\.gstatic\.com/i, toolbox.cacheFirst, {});
 toolbox.router.get(/jubeiam\.github\.io(\/)?$/i, toolbox.networkFirst, {"debug":true});
 toolbox.router.get("/", toolbox.networkFirst, {"debug":true});
+toolbox.router.get(/api\.coinmarketcap\.com\/v1\/ticker\//, toolbox.cacheFirst, {"debug":true, cache: {name: 'ticker-list', maxAgeSeconds: 60 * 1}});
+toolbox.router.get(/min-api\.cryptocompare\.com/, toolbox.cacheFirst, {"debug":true, cache: {name: 'cryptocompare', maxAgeSeconds: 60 * 1}});
 
 
 
