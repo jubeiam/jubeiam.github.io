@@ -1,7 +1,7 @@
 export default {
 	namespaced: true,
 	state: {
-		oauth: '2kd40u048u143b5xi4xmciqmzaul7k',
+		oauth: '',
 		username: 'bloddust',
 		channel: 'lirik',
 		attendee: [],
