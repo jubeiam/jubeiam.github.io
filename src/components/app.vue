@@ -30,12 +30,10 @@
 		router-link(to='/ccdashboard/ranking')
 			div
 				img(src="../assets/img/standard_coin_full_color_M.png")
-		//- router-link(to='/quiz')
-		//- 	div
-		//- 		span.fa-stack.fa-sm
-		//- 			i.fa.fa-square-o.fa-stack-2x
-		//- 			i.fa.fa-question.fa-stack-1x
 
+		router-link(to='/lottery')
+			div
+				img(src="")
 </template>
 
 <script>
