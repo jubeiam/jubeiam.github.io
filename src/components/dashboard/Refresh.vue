@@ -1,25 +1,3 @@
-<style lang="scss" scoped>
-	@import '../../scss/dashboard-vars';
-
-	div{
-		align-self: center;
-		text-align: center;
-	}
-	.btn{
-		position: relative;
-		border: $input-border;
-		border-radius: $border-radius;
-		color: $color-lighten;
-		padding: 5px;
-		display: inline-block;
-		cursor: pointer;
-
-		&:hover{
-			color: $color-light;
-		}
-	}
-
-</style>
 <template lang="pug">
 	div
 		.btn(role="button")
@@ -43,3 +21,26 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss" scoped>
+	@import '../../scss/dashboard-vars';
+
+	div{
+		align-self: center;
+		text-align: center;
+	}
+	.btn{
+		position: relative;
+		border: $input-border;
+		border-radius: $border-radius;
+		color: $color-lighten;
+		padding: 5px;
+		display: inline-block;
+		cursor: pointer;
+
+		&:hover{
+			color: $color-light;
+		}
+	}
+
+</style>

@@ -1,5 +1,4 @@
 <template lang="pug">
-
 	div(class="board clearfix")
 		div
 			h1 2048 Game
@@ -16,8 +15,6 @@
 				div(v-for="n in 16" :x="((n % 4) || 4) - 1" :y="Math.floor((n - 0.1) / 4)")
 			div(class="tiles")
 				tile(v-for="tile in tiles" :x="tile.x" :y="tile.y" :v="tile.v" :key="tile.id")
-
-
 </template>
 
 <script>

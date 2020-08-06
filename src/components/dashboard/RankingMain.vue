@@ -1,12 +1,3 @@
-<style lang="scss" scoped>
-	@import '../../scss/dashboard-vars';
-
-	.list > * {
-		margin-bottom: 5px;
-		margin-right: 5px;
-	}
-</style>
-
 <template lang="pug">
 	div
 		transition-group.list.flex.flex--wrap(name="list" tag="div")
@@ -80,3 +71,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+	@import '../../scss/dashboard-vars';
+
+	.list > * {
+		margin-bottom: 5px;
+		margin-right: 5px;
+	}
+</style>

@@ -1,25 +1,3 @@
-<style lang="scss" scoped>
-	@import '../../scss/dashboard-vars';
-
-	div{
-		min-width: 100px;
-		align-self: center;
-		text-align: center;
-	}
-	select{
-		width: 100%;
-		padding: 5px;
-		border: $input-border;
-		border-radius: $border-radius;
-		color: $color-light;
-		cursor: pointer;
-
-		&:hover{
-			color: $color;
-		}
-	}
-</style>
-
 <template lang="pug">
 	div
 		select(@change="update")
@@ -50,3 +28,25 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss" scoped>
+	@import '../../scss/dashboard-vars';
+
+	div{
+		min-width: 100px;
+		align-self: center;
+		text-align: center;
+	}
+	select{
+		width: 100%;
+		padding: 5px;
+		border: $input-border;
+		border-radius: $border-radius;
+		color: $color-light;
+		cursor: pointer;
+
+		&:hover{
+			color: $color;
+		}
+	}
+</style>

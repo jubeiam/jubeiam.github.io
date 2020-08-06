@@ -1,8 +1,6 @@
 <template lang="pug">
-
 	div(class="tile" :x="x" :y="y" :class="className")
 		div(class="value") {{ v }}
-
 </template>
 
 <script>

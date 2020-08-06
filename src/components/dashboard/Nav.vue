@@ -1,48 +1,3 @@
-<style scoped lang="scss">
-	@import '../../scss/dashboard-vars';
-
-	.navc{
-		background-color: $bg-color-lighten;
-		border-right: 1px solid $border-color;
-		border-bottom: 1px solid $border-color;
-	}
-
-	.group{
-		color: $primary-dark;
-	}
-
-	.user{
-		$size: 40px;
-		height: $size + 10px;
-		padding: 5px 0;
-		display: flex;
-		justify-content: center;
-
-		.avatar{
-			display: inline-block;
-			border-radius: 50%;
-			overflow: hidden;
-			height: 100%;
-			width: 40px;
-			height: $size;
-			width: $size;
-
-
-			img{
-				height: 100%;
-			}
-		}
-
-		.name{
-			display: inline-block;
-			font-weight: 600;
-   		margin-left: 5px;
-			text-align: center;
-			line-height: $size;
-		}
-	}
-</style>
-
 <template lang="pug">
 	.navc
 
@@ -94,3 +49,48 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+	@import '../../scss/dashboard-vars';
+
+	.navc{
+		background-color: $bg-color-lighten;
+		border-right: 1px solid $border-color;
+		border-bottom: 1px solid $border-color;
+	}
+
+	.group{
+		color: $primary-dark;
+	}
+
+	.user{
+		$size: 40px;
+		height: $size + 10px;
+		padding: 5px 0;
+		display: flex;
+		justify-content: center;
+
+		.avatar{
+			display: inline-block;
+			border-radius: 50%;
+			overflow: hidden;
+			height: 100%;
+			width: 40px;
+			height: $size;
+			width: $size;
+
+
+			img{
+				height: 100%;
+			}
+		}
+
+		.name{
+			display: inline-block;
+			font-weight: 600;
+   		margin-left: 5px;
+			text-align: center;
+			line-height: $size;
+		}
+	}
+</style>

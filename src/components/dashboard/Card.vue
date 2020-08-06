@@ -1,3 +1,20 @@
+<template lang="pug">
+	.card
+		.icon
+			slot(name="icon")
+		.flex.flex--column
+			.value
+				slot
+			.sub
+				slot(name="sub")
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
 <style lang="scss" scoped>
 	@import '../../scss/dashboard-vars';
 
@@ -28,20 +45,3 @@
 
 
 </style>
-
-<template lang="pug">
-	.card
-		.icon
-			slot(name="icon")
-		.flex.flex--column
-			.value
-				slot
-			.sub
-				slot(name="sub")
-</template>
-
-<script>
-export default {
-
-}
-</script>

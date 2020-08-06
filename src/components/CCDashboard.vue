@@ -1,3 +1,29 @@
+<template lang="pug">
+	.dashboard
+		Headerc.grid-header
+		Navigation.grid-nav
+		Container.grid-container
+		Footerc.grid-footer
+</template>
+
+<script>
+import Headerc from './dashboard/Header.vue'
+import Navigation from './dashboard/Nav.vue'
+import Footerc from './dashboard/Footer.vue'
+import Container from './dashboard/Container.vue'
+
+
+
+export default {
+	components: {
+		Headerc,
+		Navigation,
+		Footerc,
+		Container
+	}
+}
+</script>
+
 <style scoped lang="scss">
 	@import '../scss/dashboard-vars';
 
@@ -25,29 +51,3 @@
 			"nav footer footer footer";
 	}
 </style>
-
-<template lang="pug">
-	.dashboard
-		Headerc.grid-header
-		Navigation.grid-nav
-		Container.grid-container
-		Footerc.grid-footer
-</template>
-
-<script>
-import Headerc from './dashboard/Header.vue'
-import Navigation from './dashboard/Nav.vue'
-import Footerc from './dashboard/Footer.vue'
-import Container from './dashboard/Container.vue'
-
-
-
-export default {
-	components: {
-		Headerc,
-		Navigation,
-		Footerc,
-		Container
-	}
-}
-</script>

@@ -1,9 +1,4 @@
-<style scoped>
-.up{color: #00cc00}
-.down{color: #cc0000}
-</style>
-
-<template lang="pug">
+template lang="pug">
 	.trend-ico
 		template(v-if="value===0")
 			Icon(name="minus" :scale="scale")
@@ -29,3 +24,8 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+.up{color: #00cc00}
+.down{color: #cc0000}
+</style>

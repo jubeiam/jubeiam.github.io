@@ -1,13 +1,10 @@
 <template lang="pug">
-
 	div(class="score")
 		div(class="label")
 			slot
 		div(class="value") {{ v }}
-		<transition name="up">
-			<div v-if="show" class="delta">+{{ delta }}</div>
-		</transition>
-
+		transition(name="up")
+			.delta(v-if="show") +{{ delta }}
 </template>
 
 <script>

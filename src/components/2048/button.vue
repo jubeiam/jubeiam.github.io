@@ -1,9 +1,6 @@
 <template lang="pug">
-
 	div(class="bbutton" @click="click")
 		slot
-
-
 </template>
 
 <script>

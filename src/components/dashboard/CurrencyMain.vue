@@ -1,15 +1,3 @@
-<style lang="scss" scoped>
-	.item{
-		flex: 1 1 auto;
-		margin-right: 25px;
-		margin-bottom: 25px;
-
-		&:last-child{
-			margin-right: 0;
-		}
-	}
-</style>
-
 <template lang="pug">
 	div
 		.name Name
@@ -95,3 +83,15 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss" scoped>
+	.item{
+		flex: 1 1 auto;
+		margin-right: 25px;
+		margin-bottom: 25px;
+
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+</style>

@@ -1,42 +1,3 @@
-<style lang="scss" scoped>
-	@import '../../scss/dashboard-vars';
-
-	.cart-chart{
-		padding: 25px;
-		background-color: $bg-color-lighten;
-		border-radius: $border-radius;
-		border: 1px solid $border-color;
-	}
-
-	ul{
-		list-style: none;
-	}
-
-	li{
-		display: inline-block;
-		font-weight: 500;
-		font-size: 0.9rem;
-		margin-right: 15px;
-		text-transform: capitalize;
-		cursor: pointer;
-		color: $color-lighten;
-
-		&:last-child{
-			margin-right: 0;
-		}
-
-		&.active{
-			border-bottom: 2px solid $primary;
-			color: $color;
-		}
-	}
-
-	.switcher{
-		text-align: center;
-	}
-
-</style>
-
 <style lang="scss">
 	@import '../../scss/dashboard-vars';
 
@@ -191,3 +152,41 @@ export default {
 	}
 }
 </script>
+<style lang="scss" scoped>
+	@import '../../scss/dashboard-vars';
+
+	.cart-chart{
+		padding: 25px;
+		background-color: $bg-color-lighten;
+		border-radius: $border-radius;
+		border: 1px solid $border-color;
+	}
+
+	ul{
+		list-style: none;
+	}
+
+	li{
+		display: inline-block;
+		font-weight: 500;
+		font-size: 0.9rem;
+		margin-right: 15px;
+		text-transform: capitalize;
+		cursor: pointer;
+		color: $color-lighten;
+
+		&:last-child{
+			margin-right: 0;
+		}
+
+		&.active{
+			border-bottom: 2px solid $primary;
+			color: $color;
+		}
+	}
+
+	.switcher{
+		text-align: center;
+	}
+
+</style>
